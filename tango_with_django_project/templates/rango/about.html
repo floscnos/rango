@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rango</title>
-</head>
-<body>
-    <h1>Rango says...</h1>
-    <div>
-        this is the about page! <br/>
-        <strong>{{ body }}</strong><br />
+
+{% block title_block %}
+   About Rango
+{% endblock %}
+{% block body_block %}
+    <div class="jumbotron p-4">
+        <div class="container">
+            <h1 class="jumbotron-heading">Rango says...</h1>
+        <div>
+        <h2 class="h2">
+        This is the about page
+        </h2>
+        <strong>{{ body }}</strong>
+        </div>
+        </div>
     </div>
     <div>
-        <a href="/rango/">Click here to go back</a>
-        <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a cat"?>
+        <p>Visits: {{ visits }}</p>
+        <button class="btn btn-primary" id="about-btn">
+            Click me - I am using JQuery!
+        </button>
+        <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a cat">
     </div>
-</body>
-</html>
+{% endblock %}
